@@ -1,12 +1,32 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace POS_System.DAL
 {
     public class DataAccessLayer
     {
-        private readonly string conString = @"Data Source=.\SQL2022;Initial Catalog=POS_InventoryDB;Integrated Security=True;Encrypt=False;";
+        private readonly string conString = GetConnectionString();
+
+        // دالة تحديد نص الاتصال ديناميكياً
+        private static string GetConnectionString()
+        {
+            string serverName = @".\SQL2022"; // السيرفر الافتراضي لجهازك
+            string configPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "server.txt");
+
+            // قراءة اسم السيرفر من الملف الخارجي إن وجد
+            if (File.Exists(configPath))
+            {
+                string text = File.ReadAllText(configPath).Trim();
+                if (!string.IsNullOrEmpty(text))
+                {
+                    serverName = text;
+                }
+            }
+
+            return $@"Data Source={serverName};Initial Catalog=POS_InventoryDB;Integrated Security=True;Encrypt=False;";
+        }
 
         // دالة فحص الاتصال بقاعدة البيانات
         public bool TestConnection()
