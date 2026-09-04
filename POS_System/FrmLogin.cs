@@ -54,5 +54,13 @@ namespace POS_System
                 btnLogin_Click(null, null);
             }
         }
+
+        private void btnServerSettings_Click(object sender, EventArgs e)
+        {
+            using (ServerSettingsForm frm = new ServerSettingsForm())
+            {
+                frm.ShowDialog();
+            }
+        }
     }
 }

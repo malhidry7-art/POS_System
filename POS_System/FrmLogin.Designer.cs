@@ -25,6 +25,7 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnServerSettings = new System.Windows.Forms.Button();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblUser.Location = new System.Drawing.Point(290, 100);
+            this.lblUser.Location = new System.Drawing.Point(290, 95);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(111, 25);
             this.lblUser.TabIndex = 1;
@@ -63,7 +64,7 @@
             // txtUser
             // 
             this.txtUser.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtUser.Location = new System.Drawing.Point(35, 130);
+            this.txtUser.Location = new System.Drawing.Point(35, 125);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(365, 34);
             this.txtUser.TabIndex = 2;
@@ -73,7 +74,7 @@
             // 
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblPass.Location = new System.Drawing.Point(308, 185);
+            this.lblPass.Location = new System.Drawing.Point(308, 175);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(93, 25);
             this.lblPass.TabIndex = 3;
@@ -82,7 +83,7 @@
             // txtPass
             // 
             this.txtPass.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtPass.Location = new System.Drawing.Point(35, 215);
+            this.txtPass.Location = new System.Drawing.Point(35, 205);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '●';
             this.txtPass.Size = new System.Drawing.Size(365, 34);
@@ -96,7 +97,7 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(225, 280);
+            this.btnLogin.Location = new System.Drawing.Point(225, 260);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(175, 45);
             this.btnLogin.TabIndex = 5;
@@ -110,7 +111,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(35, 280);
+            this.btnExit.Location = new System.Drawing.Point(35, 260);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(175, 45);
             this.btnExit.TabIndex = 6;
@@ -118,12 +119,28 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnServerSettings
+            // 
+            this.btnServerSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(244)))));
+            this.btnServerSettings.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(195)))), ((int)(((byte)(199)))));
+            this.btnServerSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnServerSettings.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnServerSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnServerSettings.Location = new System.Drawing.Point(35, 320);
+            this.btnServerSettings.Name = "btnServerSettings";
+            this.btnServerSettings.Size = new System.Drawing.Size(365, 38);
+            this.btnServerSettings.TabIndex = 7;
+            this.btnServerSettings.Text = "⚙️ إعدادات خادم وقاعدة البيانات";
+            this.btnServerSettings.UseVisualStyleBackColor = false;
+            this.btnServerSettings.Click += new System.EventHandler(this.btnServerSettings_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(434, 361);
+            this.ClientSize = new System.Drawing.Size(434, 380);
+            this.Controls.Add(this.btnServerSettings);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPass);
@@ -142,7 +159,6 @@
             this.pnlHeader.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -155,5 +171,6 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnServerSettings;
     }
 }
